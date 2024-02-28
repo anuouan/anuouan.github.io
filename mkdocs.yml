@@ -5,15 +5,6 @@ site_url: https://anuouan.github.io
 site_author: anuouan
 site_description: anuouan-weblog
 
-nav:
-  - 主页: index.md
-    
-  - 分类:
-      - 标题: <aritle>.md
-  - 关于我:
-      - about-me/index.md
-
-
 # [UI]
 # [top]
 theme:
@@ -25,10 +16,10 @@ theme:
     - scheme: default
       # 主颜色
       # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#primary-color
-      primary: indigo
+      primary: white
       # 链接等可交互元件的高亮色
       # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#accent-color
-      accent: orange
+      accent: green
       toggle:
         # 图标
         icon: material/weather-night
@@ -36,8 +27,8 @@ theme:
         name: 切换至夜间模式
     # 夜间模式
     - scheme: slate
-      primary: indigo
-      accent: orange
+      primary: black
+      accent: green
       toggle:
         icon: material/weather-sunny
         name: 切换至日间模式
@@ -138,6 +129,8 @@ markdown_extensions:
   # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-blocks
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#highlight
   - pymdownx.highlight:
+      anchor_linenums: true
+
       # 显示行号
       linenums: true
       # 显示编程语言名称
@@ -173,3 +166,14 @@ extra_css:
   # 无序列表符号自定义
   - mkdocs/css/unordered-list-symbols.css
 
+
+nav:
+  - 主页: index.md
+
+  - 分类:
+      - JAVA
+  - 网站搭建:
+    - website/index.md
+
+  - 关于我:
+      - about-me/index.md
