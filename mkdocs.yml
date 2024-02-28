@@ -10,6 +10,9 @@ nav:
   - 主页: index.md
   - 分类:
       - category/index.md
+  - 报错日志:
+      - error-logging/index.md
+      - mkdocs报错日志: error-logging/mkdocs-error-logging/mkdocs报错日志.md
   - 网站部署:
       - website/index.md
       - website/网站部署.md
@@ -177,5 +180,6 @@ extra_css:
   - mkdocs/css/no-footer.css
   # 无序列表符号自定义
   - mkdocs/css/unordered-list-symbols.css
-
+# 解决markdown中使用原生的html缩放图片，在mkdocs网站上报错404不显示
+use_directory_urls: false
 
