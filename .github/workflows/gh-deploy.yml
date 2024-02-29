@@ -1,50 +1,37 @@
-# .github/workflows/deploy-to-pages.yml  
-# 这个文件定义了一个GitHub Actions工作流，用于自动部署网站到GitHub Pages  
+# .github/workflows/deploy-mkdocs.yml
+name: Deploy MkDocs to GitHub Pages
 
-name: Deploy to GitHub Pages # 工作流的名称  
-
-# 当有新的提交推送到主分支（通常是main或master）时，触发这个工作流  
 on:
   push:
     branches:
       - main
 
-# 定义工作流的任务  
 jobs:
   deploy:
-    # 任务运行在Ubuntu最新版本的虚拟机上  
     runs-on: ubuntu-latest
-
-    # 定义任务执行的步骤  
     steps:
-      # 第一步：检出代码  
-      - name: Checkout repository # 检出代码到工作流环境  
-        uses: actions/checkout@v2 # 使用GitHub官方提供的checkout动作  
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      # 第二步：设置Python环境  
-      - name: Set up Python # 设置Python环境，因为MkDocs需要Python来运行  
-        uses: actions/setup-python@v2 # 使用GitHub官方提供的setup-python动作  
+      - name: Set up Python
+        uses: actions/setup-python@v3
         with:
-          python-version: '3.x' # 指定Python版本  
+          python-version: '3.x'
 
-      # 第三步：安装MkDocs和Material主题  
-      - name: Install MkDocs and Material theme # 安装MkDocs和Material主题  
-        run: | # 执行以下命令  
-          pip install mkdocs # 安装MkDocs  
-          pip install mkdocs-material # 安装Material主题  
+      - name: Install MkDocs
+        run: |
+          python -m pip install --upgrade pip  
+          pip install mkdocs  
 
-      # 第四步：构建MkDocs文档  
-      - name: Build MkDocs documentation # 构建MkDocs文档  
-        run: | # 执行以下命令  
-          mkdocs build # 使用MkDocs构建文档  
+      - name: Build the MkDocs site
+        run: |
+          mkdocs build --site-dir site  
 
-      # 第五步：部署到GitHub Pages  
-      - name: Deploy to GitHub Pages # 部署到GitHub Pages  
-        uses: JamesIves/github-pages-deploy-action@releases/v3 # 使用JamesIves提供的github-pages-deploy-action动作  
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 使用GitHub提供的token，用于授权访问仓库  
-          BRANCH: gh-pages # 指定部署的分支为gh-pages  
-          FOLDER: site # 指定MkDocs构建输出的文件夹
-          user_name: "anuouan"
-          user_email: "anuouan@outlook.com"
-          commit_message: "将 MKDocs 网站部署到 GitHub Pages"
+          branch: gh-pages
+          folder: site
+
+# 注意: 如果你想要通过SSH部署，你可以使用 'peaceiris/actions-gh-pages@v3' 并设置相应的SSH密钥
+# 如果你想要通过GitHub API部署，你可以使用 'JamesIves/github-pages-deploy-action@v4'
