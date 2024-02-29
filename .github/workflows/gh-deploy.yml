@@ -1,49 +1,65 @@
-name: ci
-on:
-  push:
-    branches:
-      - main
-permissions:
-  contents: write
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    if: github.event.repository.fork == false
-    steps:
-      - uses: actions/checkout@v4
-      - name: Configure Git Credentials
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - uses: actions/setup-python@v5
-        with:
-          python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
-      - uses: actions/cache@v4
-        with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: .cache
-          restore-keys: |
-            mkdocs-material-
-      - run: apt-get install pngquant
-      - run: pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git
-      - run: mkdocs gh-deploy --force
-env:
-  GH_TOKEN: ${{ secrets.GH_TOKEN }}
-#name: Publish docs via GitHub Pages
-#on:
-#  push:
-#    branches:
-#      - main
-#jobs:
-#  build:
-#    name: Deploy docs
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Checkout main
-#        uses: actions/checkout@v2
-#      - name: Deploy docs
-#        uses: mhausenblas/mkdocs-deploy-gh-pages@master
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#          EXTRA_PACKAGES: build-base
+name: My Deploy MKDocs  
+  
+# 定义触发这个workflow的事件，比如push到main分支  
+on:  
+  push:  
+    branches:  
+      - main  
+  
+# 定义job的名称  
+jobs:  
+  deploy:  
+    # 定义job运行的环境，这里使用Ubuntu最新版本  
+    runs-on: ubuntu-latest  
+  
+    # 定义job的步骤  
+    steps:  
+      # 检出代码仓库  
+      - name: Checkout  
+        uses: actions/checkout@v2  
+  
+      # 设置Python环境，MKDocs需要Python环境  
+      - name: Set up Python  
+        uses: actions/setup-python@v2  
+        with:  
+          python-version: 3.x  
+  
+      # 安装MKDocs和依赖  
+      - name: Install MKDocs  
+        run: |  
+          pip install mkdocs  
+          pip install -r requirements.txt  # 如果你的项目有额外的依赖，请在这里安装  
+  
+      # 构建MKDocs项目  
+      - name: Build MKDocs  
+        run: |  
+          mkdocs build  
+  
+      # 部署到GitHub Pages，假设你有一个名为'gh-pages'的分支用于部署  
+      - name: Deploy to GitHub Pages  
+        uses: peaceiris/actions-gh-pages@v3  
+        with:  
+          github_token: ${{ secrets.GITHUB_TOKEN }}  
+          publish_dir: ./site  
+          # 如果你的部署分支不是'gh-pages'，请在这里修改  
+          publish_branch: gh-pages  
+  
+# 注意：  
+# 1. 上述配置假设你的MKDocs配置文件是`mkdocs.yml`，并且它位于仓库的根目录。  
+# 2. 如果你的MKDocs项目有额外的依赖，请确保在`requirements.txt`文件中列出它们。  
+# 3. `peaceiris/actions-gh-pages`是一个用于部署到GitHub Pages的Action，它会自动将构建好的网站推送到指定的分支。  
+# 4. 你需要在你的GitHub仓库中设置一个名为`GITHUB_TOKEN`的秘密，用于授权GitHub Pages的部署。  
+# 5. 确保你的MKDocs配置中的`site_dir`设置为`site`，这样构建的文件才会被部署到正确的目录。
+
+# 说明：
+# name: 工作流的名称，这里命名为“Deploy MKDocs”。
+# on: 定义触发这个工作流的事件，这里设置为当master分支有代码推送时触发。
+# jobs: 定义工作流中要执行的作业（job）。
+# deploy: 这是作业的名称，你可以根据实际需要修改。
+# runs-on: 指定作业运行的环境，这里使用Ubuntu最新版本。
+# steps: 定义作业中需要执行的步骤。
+#     Checkout: 检出代码到作业环境。
+#     Set up Python: 设置Python环境，因为MKDocs需要Python来运行。
+#     Install MKDocs: 安装MKDocs和任何额外的依赖。
+#     Build MKDocs: 使用MKDocs构建网站。
+#     Deploy to GitHub Pages: 使用peaceiris/actions-gh-pages Action将构建好的网站部署到GitHub Pages。
