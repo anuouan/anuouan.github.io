@@ -17,15 +17,18 @@ nav:
   - 博客分类:
     - category/index.md
     - JavaWeb: category/javaweb/index.md
+    - Git: category/git/index.md
     - 软件安装配置: category/software-install-config/index.md
   - 报错日志:
     - error-logging/index.md
-    - mkdocs报错日志: error-logging/mkdocs-error-logging/mkdocs报错日志.md
+    - mkdocs报错日志: error-logging/mkdocs-error-logging/index.md
   - 网站部署:
     - website/index.md
     - website/网站部署.md
   - 生活分享:
     - life-sharing/index.md
+  - 书籍分享:
+    - book-sharing/index.md
   - 关于我:
     - about-me/index.md
     - about-me/QQ留言.md
@@ -137,6 +140,7 @@ plugins:
   # https://squidfunk.github.io/mkdocs-material/plugins/tags/#meta.tags
   - tags
 markdown_extensions:
+  - mdx_truly_sane_lists
   # [数学公式支持]
   # https://squidfunk.github.io/mkdocs-material/reference/math/#katex
   - pymdownx.arithmatex:
