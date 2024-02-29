@@ -1,39 +1,50 @@
-# 工作流程的名称  
-name: Publish docs via GitHub Pages
+# .github/workflows/deploy-to-pages.yml  
+# 这个文件定义了一个GitHub Actions工作流，用于自动部署网站到GitHub Pages  
 
-# 触发此工作流程的事件  
+name: Deploy to GitHub Pages # 工作流的名称  
+
+# 当有新的提交推送到主分支（通常是main或master）时，触发这个工作流  
 on:
-  # 当代码推送到'main'分支时触发  
   push:
     branches:
       - main
 
-# 定义工作流程中要执行的任务（job）  
+# 定义工作流的任务  
 jobs:
-  # 任务的名称为'build'  
-  build:
-    # 任务的展示名称为'Deploy docs'  
-    name: Deploy docs
-    # 任务在Ubuntu最新的环境中运行  
+  deploy:
+    # 任务运行在Ubuntu最新版本的虚拟机上  
     runs-on: ubuntu-latest
-    # 任务执行的步骤列表  
-    steps:
-      # 第一步的名称是'Checkout main'  
-      - name: Checkout main
-        # 使用actions/checkout@v2这个Action来检出代码  
-        # 这确保了工作流程能够访问到最新的代码  
-        uses: actions/checkout@v2
 
-      # 第二步的名称是'Deploy docs'  
-      - name: Deploy docs
-        # 使用mhausenblas/mkdocs-deploy-gh-pages@master这个Action来部署MKDocs生成的文档到GitHub Pages  
-        # 这个Action封装了MKDocs的构建和部署过程  
-        uses: mhausenblas/mkdocs-deploy-gh-pages@master
-        # 设置环境变量，这些环境变量将在Action的执行过程中被使用  
-        env:
-          # 使用GitHub提供的加密令牌，用于授权部署操作  
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # 指定MKDocs的配置文件，默认为'mkdocs.yml'  
-          CONFIG_FILE: mkdocs.yml
-          # 额外的包，这里指定了'build-base'，这通常包含了一些编译工具，用于解决依赖问题  
-          EXTRA_PACKAGES: build-base
+    # 定义任务执行的步骤  
+    steps:
+      # 第一步：检出代码  
+      - name: Checkout repository # 检出代码到工作流环境  
+        uses: actions/checkout@v2 # 使用GitHub官方提供的checkout动作  
+
+      # 第二步：设置Python环境  
+      - name: Set up Python # 设置Python环境，因为MkDocs需要Python来运行  
+        uses: actions/setup-python@v2 # 使用GitHub官方提供的setup-python动作  
+        with:
+          python-version: '3.x' # 指定Python版本  
+
+      # 第三步：安装MkDocs和Material主题  
+      - name: Install MkDocs and Material theme # 安装MkDocs和Material主题  
+        run: | # 执行以下命令  
+          pip install mkdocs # 安装MkDocs  
+          pip install mkdocs-material # 安装Material主题  
+
+      # 第四步：构建MkDocs文档  
+      - name: Build MkDocs documentation # 构建MkDocs文档  
+        run: | # 执行以下命令  
+          mkdocs build # 使用MkDocs构建文档  
+
+      # 第五步：部署到GitHub Pages  
+      - name: Deploy to GitHub Pages # 部署到GitHub Pages  
+        uses: JamesIves/github-pages-deploy-action@releases/v3 # 使用JamesIves提供的github-pages-deploy-action动作  
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 使用GitHub提供的token，用于授权访问仓库  
+          BRANCH: gh-pages # 指定部署的分支为gh-pages  
+          FOLDER: site # 指定MkDocs构建输出的文件夹
+          user_name: "anuouan"
+          user_email: "anuouan@outlook.com"
+          commit_message: "将 MKDocs 网站部署到 GitHub Pages"
