@@ -1,0 +1,155 @@
+# Git使用SSH连接GitHub报错
+
+## 1. 问题：`ssh: connect to host github.com port 22: Connection timed out`
+
+进行github操作时出现了下面的错误，如何解决
+
+<img src="1-Git%E4%BD%BF%E7%94%A8SSH%E8%BF%9E%E6%8E%A5GitHub%E6%8A%A5%E9%94%99.assets/image-20240130184952905.png" alt="image-20240130184952905" style="zoom:80%;" />
+
+**排查思路：**
+
+`ssh: connect to host github.com port 22: Connection refused` 这个错误提示的是连接github.com的22端口被拒绝了。可以简单理解为此门不通，既然这个端口号走不通，那换一个端口号试试看。
+
+## 2. 解决方法
+
+### 2.1. 解决方法一：
+
+网上大多的解决办法有两种，第一种就是修改访问时要走的端口号——前门不通走后门
+
+根据我个人的情况，第一次遇到这个报错时，.ssh文件夹里是没有config文件的，可以直接在该文件夹下新建config.txt文件，将下面的命令直接粘贴进去，保存退出后，把此文件的.txt后缀删除（重命名）。
+
+```ABAP
+Host github.com
+  Hostname ssh.github.com
+  Port 443
+```
+
+修改完成后，在Git Bash 里输入：
+
+```
+ssh -T git@github.com
+```
+
+来测试是否能连接上（切记一切配置改完先测试，避免无用浪费）
+
+如果回车后出现以下回复：
+
+<img src="1-Git%E4%BD%BF%E7%94%A8SSH%E8%BF%9E%E6%8E%A5GitHub%E6%8A%A5%E9%94%99.assets/image-20240130185732358.png" alt="image-20240130185732358" style="zoom:80%;" />
+
+它翻译过来意思是：
+
+```java
+无法确定主机“[ssh.github.com]：443 （[20.205.243.160]：443）”的真实性。
+ED25519 密钥指纹是 SHA256：巴拉巴拉巴拉阿巴阿巴
+此密钥以任何其他名称未知
+是否确实要继续连接（是/否/[指纹]）？
+```
+
+密钥没名字是我在生成密钥时没指定名字方便gitee和GitHub公用同一个公钥，如果有人已经指定了具体名字中间的提示应该不会出现。它提示你是否继续链接时填yes回车就行，之后就会出现这样的提示：
+
+```java
+Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+出现这样的提示说明连接成功了，不放心可以再用
+
+```java
+ssh -T git@github.com
+```
+
+
+测试一下，还会出现上面的successfully提示。
+
+**如何找到.ssh文件夹？**
+
+ 一般.ssh文件夹都在C盘的个人用户文件夹下，不同牌子的电脑默认路径都会有微小的不同，这里仅展示小米电脑的搜索路径。
+
+<img src="1-Git%E4%BD%BF%E7%94%A8SSH%E8%BF%9E%E6%8E%A5GitHub%E6%8A%A5%E9%94%99.assets/image-20240130190050657.png" alt="image-20240130190050657" style="zoom:80%;" />
+
+如果改了443端口号依然走不通（ssh: connect to host github.com port 443: Connection refused），那你可能需要下面的这个方法
+
+### 2.2. 解决方法二：
+
+这个方案有效的前提是：执行命令
+
+```git
+ssh -T -p 443 git@ssh.github.com
+```
+
+后不再提示connection refused，所以要尝试这个方案的小伙伴先执行这条命令测试下
+
+使用https协议，不要使用ssh协议
+在你的GitHub的本地repo目录，执行如下命令：
+
+```
+git config --local -e
+```
+
+然后把里面的url配置项从git格式
+
+```
+url = git@github.com:username/repo.git
+```
+
+修改为https格式
+
+```
+url = https://github.com/username/repo.git
+```
+
+这个其实修改的是repo根目录下的./git/config文件。
+
+如果还不行，再看下面的方式（收集自网络）
+
+### 2.3. 解决方法三：
+
+既然和GitHub建立ssh连接的时候提示connection refused，那我们就详细看看建立ssh连接的过程中发生了什么，可以使用ssh -v命令，-v表示verbose，会打出详细日志。
+
+```
+ssh -vT git@github.com
+```
+
+```ABAP
+OpenSSH_9.0p1, OpenSSL 1.1.1o  3 May 2022
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: Connecting to github.com [::1] port 22.
+debug1: connect to address ::1 port 22: Connection refused
+debug1: Connecting to github.com [127.0.0.1] port 22.
+debug1: connect to address 127.0.0.1 port 22: Connection refused
+ssh: connect to host github.com port 22: Connection refused
+```
+
+从上面的信息马上就发现了诡异的地方，连接http://github.com的地址居然是::1和127.0.0.1。前者是IPV6的localhost地址，后者是IPV4的localhost地址。
+
+到这里问题就很明确了，是DNS解析出问题了，导致http://github.com域名被解析成了localhost的ip地址，就自然连不上GitHub了。
+
+Windows下执行ipconfig /flushdns 清楚DNS缓存后也没用，最后修改hosts文件，增加一条github.com的域名映射搞定。
+
+```
+140.82.113.4 github.com
+```
+
+查找http://github.com的ip地址可以使用https://www.ipaddress.com/来查询，也可以使用nslookup命令
+
+```
+nslookup github.com 8.8.8.8
+```
+
+nslookup是域名解析工具，8.8.8.8是Google的DNS服务器地址。直接使用
+
+```
+nslookup github.com
+```
+
+就会使用本机已经设置好的DNS服务器进行域名解析，ipconfig /all可以查看本机DNS服务器地址。
+
+**原因总结：**
+
+这个问题其实就是DNS解析被污染了，有2种可能：
+
+DNS解析被运营商劫持了
+使用了科学上网工具
+ps:域名映射怎么添加
+
+搜索Windows host域名映射配置
+

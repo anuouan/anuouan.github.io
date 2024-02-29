@@ -17,11 +17,22 @@ nav:
   - 博客分类:
     - category/index.md
     - JavaWeb: category/javaweb/index.md
-    - Git: category/git/index.md
-    - 软件安装配置: category/software-install-config/index.md
+    - Git:
+        - category/git/index.md
+        - 1.git自学教程: category/git/1-git自学教程.md
+        - 2.Git常用命令: category/git/2-Git常用命令.md
+    - 软件安装配置:
+        - category/software-install-config/index.md
+        - 1.mysql-8.x免安装配置: category/software-install-config/1-mysql-8.x免安装配置.md
+        - 2.Navicat16激活破解: category/software-install-config/2-Navicat16激活破解.md
+        - 3.Offic下载与破解: category/software-install-config/3-Offic下载与破解.md
+        - 4.eclipse基础配置及快捷键: category/software-install-config/4-eclipse基础配置及快捷键.md
   - 报错日志:
     - error-logging/index.md
-    - mkdocs报错日志: error-logging/mkdocs-error-logging/index.md
+    - Git报错日志:
+        - error-logging/git-error/index.md
+        - 1.Git使用SSH连接GitHub报错: error-logging/git-error/1-Git使用SSH连接GitHub报错.md
+    - MkDocs报错日志: error-logging/mkdocs-error/index.md
   - 网站部署:
     - website/index.md
     - website/网站部署.md
@@ -32,6 +43,7 @@ nav:
   - 关于我:
     - about-me/index.md
     - about-me/QQ留言.md
+    - about-me/打赏支持.md
 
 # [UI]
 # [top]
@@ -117,13 +129,13 @@ extra:
       link: https://space.bilibili.com/1599014047
     - name: anuouan QQ 512864110
       icon: fontawesome/brands/qq
-      link: https://anuouan.github.io/about-me/QQ号.md
+      link: https://anuouan.github.io/about-me/QQ%E7%95%99%E8%A8%80.html
     - name: 小红书 | anuouan
       icon: fontawesome/solid/images
       link: https://www.xiaohongshu.com/user/profile/62655b530000000010007573
     - name: 打赏支持
       icon: fontawesome/solid/mug-saucer
-      link: 
+      link: https://anuouan.github.io/about-me/打赏支持.html
 
 # [Extensions]
 plugins:
