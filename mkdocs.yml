@@ -16,6 +16,8 @@ nav:
     - 关于我: about-me/index.md
   - 博客分类:
     - category/index.md
+    - JavaWeb: category/javaweb/index.md
+    - 软件安装配置: category/software-install-config/index.md
   - 报错日志:
     - error-logging/index.md
     - mkdocs报错日志: error-logging/mkdocs-error-logging/mkdocs报错日志.md
