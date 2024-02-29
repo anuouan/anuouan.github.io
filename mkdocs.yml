@@ -7,18 +7,26 @@ site_description: anuouan-weblog
 
 # [Navigtion]
 nav:
-  - 主页: index.md
-  - 分类:
-      - category/index.md
+  - 主页:
+    - index.md
+    - 博客分类: category/index.md
+    - 报错日志: error-logging/index.md
+    - 网站部署: website/index.md
+    - 生活分享: life-sharing/index.md
+    - 关于我: about-me/index.md
+  - 博客分类:
+    - category/index.md
   - 报错日志:
-      - error-logging/index.md
-      - mkdocs报错日志: error-logging/mkdocs-error-logging/mkdocs报错日志.md
+    - error-logging/index.md
+    - mkdocs报错日志: error-logging/mkdocs-error-logging/mkdocs报错日志.md
   - 网站部署:
-      - website/index.md
-      - website/网站部署.md
+    - website/index.md
+    - website/网站部署.md
+  - 生活分享:
+    - life-sharing/index.md
   - 关于我:
-      - about-me/index.md
-      - about-me/QQ留言.md
+    - about-me/index.md
+    - about-me/QQ留言.md
 
 # [UI]
 # [top]
