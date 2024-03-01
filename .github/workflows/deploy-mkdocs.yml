@@ -37,7 +37,7 @@ jobs:
         run: | # 运行一系列命令来安装MkDocs和依赖项  
           pip install mkdocs # 安装MkDocs  
           pip install mdx_truly_sane_lists
-          pip install -r requirements.txt # 如果存在requirements.txt文件，则安装其中的依赖项  
+#          pip install -r requirements.txt # 如果存在requirements.txt文件，则安装其中的依赖项
           # 可以在这里添加更多的pip install命令来安装其他依赖项  
 
       # 步骤4：构建MkDocs站点
