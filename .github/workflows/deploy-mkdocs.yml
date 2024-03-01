@@ -12,7 +12,7 @@ jobs:
     steps:
       # 先打开 main 分支
       - uses: actions/checkout@v2
-      # 再安装 Python 和相关环境
+      # 再安装 Python 和相关环境 
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
