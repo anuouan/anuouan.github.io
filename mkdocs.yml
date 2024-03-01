@@ -59,6 +59,8 @@ nav:
 # [UI]
 # [top]
 theme:
+  favicon: assets/images/favicon.png  # 更改网站的 favicon
+  logo: assets/images/favicon.png     # 更改网站的 logo
   name: material
   # [切换日间模式和夜间模式]
   # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-palette-toggle
@@ -124,9 +126,10 @@ repo_name: anuouan.github.io
 # [bottom-left corner]
 # [版权说明]
 # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#copyright-notice
-copyright: anuouan CC-BY-4.0
+copyright: Copyright  © 2024 Anuouan
 # [bottom-right corner]
 extra:
+  homepage: logoko.png
   # [添加社交网络图标和链接]
   # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#social-links
   # 搜索图标：https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search
