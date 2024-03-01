@@ -19,14 +19,17 @@ nav:
     - JavaWeb: category/javaweb/index.md
     - Maven:
       - category/maven/index.md
-      - 1.maven自学教程: category/maven/1.maven自学教程.md
+      - 1.maven自学笔记: category/maven/1.maven自学教程.md
     - Git:
         - category/git/index.md
-        - 1.git自学教程: category/git/1.git自学教程.md
+        - 1.git自学笔记: category/git/1.git自学教程.md
         - 2.Git常用命令: category/git/2.Git常用命令.md
     - MyBatis:
         - category/mybatis/index.md
         - 1.MyBatis自学笔记: category/mybatis/1.MyBatis自学笔记.md
+    - Spring:
+        - category/spring/index.md
+        - 1.Spring自学笔记: category/spring/1.Spring自学笔记.md
     - 软件安装配置:
         - category/software-install-config/index.md
         - 1.mysql-8.x免安装配置: category/software-install-config/1.mysql-8.x免安装配置.md
