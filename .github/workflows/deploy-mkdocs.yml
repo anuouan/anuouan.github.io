@@ -1,0 +1,55 @@
+# 定义工作流程的名称
+name: Deploy MkDocs
+
+# 定义触发此工作流程的事件
+on:
+  # 当代码推送到主分支时触发
+  push:
+    branches:
+      - main # 指定主分支的名称
+  # 当拉取请求合并到主分支时触发
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+# 定义工作流程中的任务
+jobs:
+  build-and-deploy:
+    # 任务的名称
+    name: Build and Deploy MkDocs
+    # 任务运行的环境
+    runs-on: ubuntu-latest # 使用最新的Ubuntu环境
+    # 任务执行的步骤
+    steps:
+      # 步骤1：检出代码仓库
+      - name: Checkout repository
+        uses: actions/checkout@v3 # 使用GitHub Actions提供的checkout动作来检出代码
+
+      # 步骤2：设置Python环境
+      - name: Set up Python
+        uses: actions/setup-python@v3 # 使用GitHub Actions提供的setup-python动作来设置Python环境
+        with:
+          python-version: "3.x" # 设置Python版本，这里使用3.x表示最新版本
+
+      # 步骤3：安装MkDocs和依赖项
+      - name: Install MkDocs and dependencies
+        run: | # 运行一系列命令来安装MkDocs和依赖项  
+          pip install mkdocs # 安装MkDocs  
+          pip install mdx_truly_sane_lists
+          pip install -r requirements.txt # 如果存在requirements.txt文件，则安装其中的依赖项  
+          # 可以在这里添加更多的pip install命令来安装其他依赖项  
+
+      # 步骤4：构建MkDocs站点
+      - name: Build MkDocs site
+        run: mkdocs build --site-dir site # 使用mkdocs命令构建站点，并将生成的文件放在site目录下
+
+      # 步骤5：部署MkDocs站点到GitHub Pages
+      - name: Deploy MkDocs to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4 # 使用JamesIves提供的github-pages-deploy-action动作来部署站点
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 使用GitHub提供的token来进行部署
+          BRANCH: gh-pages # 指定部署到的分支，通常为gh-pages
+          FOLDER: site # 指定要部署的文件夹，这里是MkDocs构建生成的site文件夹
+
+# 可以在这里添加更多的jobs来定义其他任务
