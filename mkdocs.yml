@@ -19,32 +19,35 @@ nav:
     - JavaWeb: category/javaweb/index.md
     - Maven:
       - category/maven/index.md
-      - 1.maven自学教程: category/maven/1-maven自学教程.md
+      - 1.maven自学教程: category/maven/1.maven自学教程.md
     - Git:
         - category/git/index.md
-        - 1.git自学教程: category/git/1-git自学教程.md
-        - 2.Git常用命令: category/git/2-Git常用命令.md
+        - 1.git自学教程: category/git/1.git自学教程.md
+        - 2.Git常用命令: category/git/2.Git常用命令.md
     - MyBatis:
         - category/mybatis/index.md
         - 1.MyBatis自学笔记: category/mybatis/1.MyBatis自学笔记.md
     - 软件安装配置:
         - category/software-install-config/index.md
-        - 1.mysql-8.x免安装配置: category/software-install-config/1-mysql-8.x免安装配置.md
-        - 2.Navicat16激活破解: category/software-install-config/2-Navicat16激活破解.md
-        - 3.Offic下载与破解: category/software-install-config/3-Offic下载与破解.md
-        - 4.eclipse基础配置及快捷键: category/software-install-config/4-eclipse基础配置及快捷键.md
+        - 1.mysql-8.x免安装配置: category/software-install-config/1.mysql-8.x免安装配置.md
+        - 2.Navicat16激活破解: category/software-install-config/2.Navicat16激活破解.md
+        - 3.Offic下载与破解: category/software-install-config/3.Offic下载与破解.md
+        - 4.eclipse基础配置及快捷键: category/software-install-config/4.eclipse基础配置及快捷键.md
   - 报错日志:
     - error-logging/index.md
     - Git报错日志:
         - error-logging/git-error/index.md
-        - 1.Git使用SSH连接GitHub报错: error-logging/git-error/1-Git使用SSH连接GitHub报错.md
-    - MkDocs报错日志: error-logging/mkdocs-error/index.md
+        - 1.Git使用SSH连接GitHub报错: error-logging/git-error/1.Git使用SSH连接GitHub报错.md
+    - MkDocs报错日志:
+        - error-logging/mkdocs-error/index.md
+        - 1.mkdocs图片路径找不到问题: error-logging/mkdocs-error/1.mkdocs图片路径找不到问题.md
+        - 2.mkdocs不支持无序嵌套问题: error-logging/mkdocs-error/2.mkdocs不支持无序嵌套问题.md
   - 网站部署:
     - website/index.md
     - 1.个人网站搭建: website/1.网站部署.md
   - 生活分享:
     - life-sharing/index.md
-    - 2.出门必备物品清单: life-sharing/1.出门必备物品清单.md
+    - 1.出门必备物品清单: life-sharing/1.出门必备物品清单.md
     - 2.实习必问的问题: life-sharing/2.实习必问的问题.md
   - 书籍分享:
     - book-sharing/index.md
