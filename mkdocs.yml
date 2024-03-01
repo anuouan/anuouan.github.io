@@ -41,9 +41,11 @@ nav:
     - MkDocs报错日志: error-logging/mkdocs-error/index.md
   - 网站部署:
     - website/index.md
-    - website/网站部署.md
+    - 1.个人网站搭建: website/1.网站部署.md
   - 生活分享:
     - life-sharing/index.md
+    - 2.出门必备物品清单: life-sharing/1.出门必备物品清单.md
+    - 2.实习必问的问题: life-sharing/2.实习必问的问题.md
   - 书籍分享:
     - book-sharing/index.md
   - 关于我:
