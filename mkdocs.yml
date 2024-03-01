@@ -17,6 +17,9 @@ nav:
   - 博客分类:
     - category/index.md
     - JavaWeb: category/javaweb/index.md
+    - Maven:
+      - category/maven/index.md
+      - 1.maven自学教程: category/maven/1-maven自学教程.md
     - Git:
         - category/git/index.md
         - 1.git自学教程: category/git/1-git自学教程.md
