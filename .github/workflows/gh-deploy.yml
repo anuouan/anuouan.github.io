@@ -27,7 +27,12 @@ jobs:
       - name: Deploy docs
         # 使用mhausenblas/mkdocs-deploy-gh-pages的master版本，这是一个用于部署MkDocs生成的文档的GitHub Action
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
-
+        with:
+          # 设置MkDocs的额外插件
+          extra_plugins:
+            - pip install mdx-truly-sane-lists  # 插件1的名称
+#            - plugin2  # 插件2的名称
+            # ... 添加更多插件
         # 设置环境变量
         env:
           # 使用GitHub提供的秘密令牌，用于授权访问仓库等操作
