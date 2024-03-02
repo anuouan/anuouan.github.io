@@ -37,6 +37,10 @@ nav:
         - category/linux/index.md
         - 1.Linux vi/vim: category/linux/1.VIM.md
         - 2.Linux常用命令总结: category/linux/2.Linux常用命令总结.md
+    - 算法笔记:
+      - category/algorithm/index.md
+      - 数组:
+        - 1.704 二分查找: category/algorithm/1.704 二分查找.md
     - 软件安装配置:
         - category/software-install-config/index.md
         - 1.mysql-8.x免安装配置: category/software-install-config/1.mysql-8.x免安装配置.md
