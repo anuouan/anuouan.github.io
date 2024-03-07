@@ -42,6 +42,7 @@ nav:
       - 数组:
         - 1.704 二分查找: category/algorithm/1.704 二分查找.md
         - 2.27 移除元素: category/algorithm/2.27 移除元素.md
+        - 3.977 有序数组的平方: category/algorithm/3.977 有序数组的平方.md
     - 软件安装配置:
         - category/software-install-config/index.md
         - 1.mysql-8.x免安装配置: category/software-install-config/1.mysql-8.x免安装配置.md
