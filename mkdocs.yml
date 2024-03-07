@@ -36,7 +36,7 @@ nav:
     - Linux:
         - category/linux/index.md
         - 1.Linux vi/vim: category/linux/1.VIM.md
-        - 2.Linux常用命令总结: category/linux/2.Linux常用命令总结.md
+        - 2.Linux命令查询.md: category/linux/2.Linux命令查询.md
     - 算法笔记:
       - category/algorithm/index.md
       - 数组:
