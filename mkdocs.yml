@@ -37,6 +37,9 @@ nav:
         - category/linux/index.md
         - 1.Linux vi/vim: category/linux/1.VIM.md
         - 2.Linux命令查询.md: category/linux/2.Linux命令查询.md
+    - Redis:
+        - category/redis/index.md
+        - 1.Redis笔记: category/redis/1.Redis笔记.md
     - 算法笔记:
       - category/algorithm/index.md
       - 数组:
