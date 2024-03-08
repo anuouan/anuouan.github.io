@@ -5,7 +5,7 @@ site_url: https://anuouan.github.io
 site_author: anuouan
 site_description: anuouan-weblog
 
-# [Navigtion]
+# [导航栏]
 nav:
   - 主页:
     - index.md
