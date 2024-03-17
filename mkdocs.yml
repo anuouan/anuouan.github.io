@@ -40,6 +40,9 @@ nav:
     - Redis:
         - category/redis/index.md
         - 1.Redis笔记: category/redis/1.Redis笔记.md
+    - 设计模式:
+        - category/设计模式/index.md
+        - 1.设计模式: category/设计模式/index.md
     - 算法笔记:
       - category/algorithm/index.md
       - 数组:
