@@ -8,81 +8,84 @@ site_description: anuouan-weblog
 # [导航栏]
 nav:
   - 主页:
-    - index.md
-    - 博客分类: category/index.md
-    - 报错日志: error-logging/index.md
-    - 网站部署: website/index.md
-    - 生活分享: life-sharing/index.md
-    - 关于我: about-me/index.md
+      - index.md
+      - 博客分类: 博客分类/index.md
+      - 报错日志: 错误日志/index.md
+      - 网站部署: 网站部署/index.md
+      - 生活分享: life-sharing/index.md
+      - 关于我: 关于我/index.md
   - 博客分类:
-    - category/index.md
-    - JavaWeb: category/javaweb/index.md
-    - Maven:
-      - category/maven/index.md
-      - 1.maven自学笔记: category/maven/1.maven自学教程.md
-    - Git:
-        - category/git/index.md
-        - 1.git自学笔记: category/git/1.git自学教程.md
-        - 2.Git常用命令: category/git/2.Git常用命令.md
-    - MyBatis:
-        - category/mybatis/index.md
-        - 1.MyBatis自学笔记: category/mybatis/1.MyBatis自学笔记.md
-    - Spring:
-        - category/spring/index.md
-        - 1.Spring自学笔记: category/spring/1.Spring自学笔记.md
-    - SpringMVC:
-        - category/spring-mvc/index.md
-        - 1.SpringMVC自学笔记: category/spring-mvc/1.SpringMVC自学笔记.md
-    - Linux:
-        - category/linux/index.md
-        - 1.Linux vi/vim: category/linux/1.VIM.md
-        - 2.Linux命令查询.md: category/linux/2.Linux命令查询.md
-    - Redis:
-        - category/redis/index.md
-        - 1.Redis笔记: category/redis/1.Redis笔记.md
-    - 设计模式:
-        - category/设计模式/index.md
-        - 1.设计模式: category/设计模式/index.md
-    - 算法笔记:
-      - category/algorithm/index.md
-      - 数组:
-        - 1.704 二分查找: category/algorithm/数组/1.704 二分查找.md
-        - 2.27 移除元素: category/algorithm/数组/2.27 移除元素.md
-        - 3.977 有序数组的平方: category/algorithm/数组/3.977 有序数组的平方.md
-        - 4.209 长度最小的子数组: category/algorithm/数组/4.209 长度最小的子数组.md
-        - 5.59 螺旋矩阵 II: category/algorithm/数组/5.59 螺旋矩阵 II.md
-      - 链表:
-        - 1.203 移除链表元素: category/algorithm/链表/1.203 移除链表元素.md
-    - 软件安装配置:
-        - category/software-install-config/index.md
-        - 1.mysql-8.x免安装配置: category/software-install-config/1.mysql-8.x免安装配置.md
-        - 2.Navicat16激活破解: category/software-install-config/2.Navicat16激活破解.md
-        - 3.Offic下载与破解: category/software-install-config/3.Offic下载与破解.md
-        - 4.eclipse基础配置及快捷键: category/software-install-config/4.eclipse基础配置及快捷键.md
-  - 报错日志:
-    - error-logging/index.md
-    - Git报错日志:
-        - error-logging/git-error/index.md
-        - 1.Git使用SSH连接GitHub报错: error-logging/git-error/1.Git使用SSH连接GitHub报错.md
-    - MkDocs报错日志:
-        - error-logging/mkdocs-error/index.md
-        - 1.mkdocs图片路径找不到问题: error-logging/mkdocs-error/1.mkdocs图片路径找不到问题.md
-        - 2.mkdocs不支持无序嵌套问题: error-logging/mkdocs-error/2.mkdocs不支持无序嵌套问题.md
+      - 博客分类/index.md
+      - JavaWeb: 博客分类/javaweb/index.md
+      - Maven:
+          - 博客分类/maven/index.md
+          - 1.maven自学笔记: 博客分类/maven/1.maven自学教程.md
+      - Git:
+          - 博客分类/git/index.md
+          - 1.git自学笔记: 博客分类/git/1.git自学教程.md
+          - 2.Git常用命令: 博客分类/git/2.Git常用命令.md
+      - MyBatis:
+          - 博客分类/mybatis/index.md
+          - 1.MyBatis自学笔记: 博客分类/mybatis/1.MyBatis自学笔记.md
+      - Spring:
+          - 博客分类/spring/index.md
+          - 1.Spring自学笔记: 博客分类/spring/1.Spring自学笔记.md
+      - SpringMVC:
+          - 博客分类/spring-mvc/index.md
+          - 1.SpringMVC自学笔记: 博客分类/spring-mvc/1.SpringMVC自学笔记.md
+      - Linux:
+          - 博客分类/linux/index.md
+          - 1.Linux vi/vim: 博客分类/linux/1.VIM.md
+          - 2.Linux命令查询.md: 博客分类/linux/2.Linux命令查询.md
+      - Redis:
+          - 博客分类/redis/index.md
+          - 1.Redis笔记: 博客分类/redis/1.Redis笔记.md
+      - 设计模式:
+          - 博客分类/设计模式/index.md
+          - 1.设计模式: 博客分类/设计模式/index.md
+      - 算法笔记:
+          - 博客分类/算法日志/index.md
+          - 数组:
+              - 1.704 二分查找: 博客分类/算法日志/数组/1.704 二分查找.md
+              - 2.27 移除元素: 博客分类/算法日志/数组/2.27 移除元素.md
+              - 3.977 有序数组的平方: 博客分类/算法日志/数组/3.977 有序数组的平方.md
+              - 4.209 长度最小的子数组: 博客分类/算法日志/数组/4.209 长度最小的子数组.md
+              - 5.59 螺旋矩阵 II: 博客分类/算法日志/数组/5.59 螺旋矩阵 II.md
+          - 链表:
+              - 1.203 移除链表元素: 博客分类/算法日志/链表/1.203 移除链表元素.md
+      - 软件安装配置:
+          - 博客分类/software-install-config/index.md
+          - 1.mysql-8.x免安装配置: 博客分类/software-install-config/1.mysql-8.x免安装配置.md
+          - 2.Navicat16激活破解: 博客分类/software-install-config/2.Navicat16激活破解.md
+          - 3.Offic下载与破解: 博客分类/software-install-config/3.Offic下载与破解.md
+          - 4.eclipse基础配置及快捷键: 博客分类/software-install-config/4.eclipse基础配置及快捷键.md
+  - 错误日志:
+      - 错误日志/index.md
+      - Git错误日志:
+          - 错误日志/Git错误日志/index.md
+          - 1.Git使用SSH连接GitHub报错: 错误日志/Git错误日志/1.Git使用SSH连接GitHub报错.md
+      - MkDocs错误日志:
+          - 错误日志/MkDocs错误日志/index.md
+          - 1.mkdocs图片路径找不到问题: 错误日志/MkDocs错误日志/1.mkdocs图片路径找不到问题.md
+          - 2.mkdocs不支持无序嵌套问题: 错误日志/MkDocs错误日志/2.mkdocs不支持无序嵌套问题.md
+      - Linux错误日志:
+          - 错误日志/Linux错误日志/index.md
+          - 1.在虚拟机安装Ubuntu时出现窗口不全: 错误日志/Linux错误日志/1.在虚拟机安装Ubuntu时出现窗口不全.md
   - 网站部署:
-    - website/index.md
-    - 1.个人网站搭建: website/1.网站部署.md
-    - 2.Clash 永久修改配置跳过 ChatGPT 封禁: website/2.Clash 永久修改配置跳过 ChatGPT 封禁 IP.md
+      - 网站部署/index.md
+      - 1.个人网站搭建: 网站部署/1.网站部署.md
+      - 2.Clash 永久修改配置跳过 ChatGPT 封禁: 网站部署/2.Clash 永久修改配置跳过 ChatGPT 封禁 IP.md
   - 生活分享:
-    - life-sharing/index.md
-    - 1.出门必备物品清单: life-sharing/1.出门必备物品清单.md
-    - 2.实习必问的问题: life-sharing/2.实习必问的问题.md
+      - 生活分享/index.md
+      - 1.出门必备物品清单: 生活分享/1.出门必备物品清单.md
+      - 2.实习必问的问题: 生活分享/2.实习必问的问题.md
   - 书籍分享:
-    - book-sharing/index.md
+      - 书籍分享/index.md
   - 关于我:
-    - about-me/index.md
-    - about-me/QQ留言.md
-    - about-me/打赏支持.md
-    - about-me/找工作.md
+      - 关于我/index.md
+      - 关于我/QQ留言.md
+      - 关于我/打赏支持.md
+      - 关于我/找工作.md
 
 # [UI]
 # [top]
@@ -171,13 +174,13 @@ extra:
       link: https://space.bilibili.com/1599014047
     - name: anuouan QQ 512864110
       icon: fontawesome/brands/qq
-      link: https://anuouan.github.io/about-me/QQ%E7%95%99%E8%A8%80.html
+      link: https://anuouan.github.io/关于我/QQ%E7%95%99%E8%A8%80.html
     - name: 小红书 | anuouan
       icon: fontawesome/solid/images
       link: https://www.xiaohongshu.com/user/profile/62655b530000000010007573
     - name: 打赏支持
       icon: fontawesome/solid/mug-saucer
-      link: https://anuouan.github.io/about-me/打赏支持.html
+      link: https://anuouan.github.io/关于我/打赏支持.html
 
 # [Extensions]
 plugins:
