@@ -36,7 +36,8 @@ nav:
       - Linux:
           - 博客分类/linux/index.md
           - 1.Linux vi/vim: 博客分类/linux/1.VIM.md
-          - 2.Linux命令查询.md: 博客分类/linux/2.Linux命令查询.md
+          - 2.Linux命令查询: 博客分类/linux/2.Linux命令查询.md
+          - 3.linux入门篇: 博客分类/linux/3.linux入门篇.md
       - Redis:
           - 博客分类/redis/index.md
           - 1.Redis笔记: 博客分类/redis/1.Redis笔记.md
