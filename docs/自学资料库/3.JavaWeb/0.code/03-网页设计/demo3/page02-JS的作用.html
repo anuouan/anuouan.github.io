@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function test(){
+				//操作HTML标签的属性
+				document.getElementById("img1").width = 200;
+				document.getElementById("img1").height = 200;
+				//操作HTML标签的样式
+				document.getElementById("img1").style.borderRadius = "50%";
+				//移出HTML标签（DOM操作）
+				document.getElementById("img1").remove();
+				//数据的异步交互
+			}
+		</script>
+	</head>
+	<body>
+		<img id="img1" src="imgs/img01.png" width=""/> <br/>
+		<input type="button" value="测试按钮"  onclick="test()"/>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* body标签在浏览器中默认是有边距，为了让body的元素可以紧挨着浏览器边缘，
+			我们通常对body进行padding和margin设置为0px，以消除边距 */
+			body{
+				padding: 0px;
+				margin: 0px;
+			}
+			img{
+				/* height: 200px; */
+				width: 200px;
+				margin: 0px;
+			}
+			
+			/* div块级元素，高度默认和div中内容一样高；宽度默认和父容器一样宽 */
+			div{
+				border:1px solid green;
+				width: 200px;
+				padding: 0px;
+			}
+			
+			/* 相对布局：div有默认的位置 ，相对布局就是参考默认位置的偏移量 */
+			#div2{
+				position: relative;
+				left: 300px;
+				top: 200px;
+			}
+			#div3{
+				position: relative;
+				left: 150px;
+			}
+			
+			#container{
+				width: 1000px;
+				height: 800px;
+				background: yellow;
+				margin: 100px;
+				position: relative;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="div1">
+				<img src="imgs/img01.png" />
+			</div>
+			
+			<div id="div2">
+				<img src="imgs/img02.png" />
+			</div>
+			
+			<div id="div3">
+				<img src="imgs/img03.png" />
+			</div>
+		</div>
+	</body>
+</html>

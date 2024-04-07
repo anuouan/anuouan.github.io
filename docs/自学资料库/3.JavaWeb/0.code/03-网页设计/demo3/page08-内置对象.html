@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>内置对象-String</title>
+	</head>
+	<body>
+		
+		<button onclick="testString()">测试String</button>
+		
+		<script type="text/javascript">
+			function testString(){
+				//1.创建String对象
+				var str1 = "www.qfedu.com";
+				var str2 = new String("www.TAOBAO.com");
+				
+				//2.属性
+				// length属性获取当前字符串的长度
+				var len = str1.length;
+				
+				//3.常用函数
+				// charAt : 获取str1中索引为3的字符（索引从0开始）
+				var c = str1.charAt(3);
+				
+				// indexOf: 获取str1中第一次出现"edu"的索引
+				var i = str1.indexOf("edu");
+				
+				// lastIndexOf: 获取str2中最后一个“o”的索引
+				var j = str2.lastIndexOf("o");
+				
+				// split :分隔字符串，将str1用"."分隔成多个字符串，存放到arr中
+				var arr = str1.split(".");
+				
+				// substring : 从str1字符串索引为4的位置开始截取，直到str1结束
+				var s1 = str1.substring(4);
+				// 从str1字符串索引为4的位置开始截取(包含)，直到索引为9的位置(不包含)
+				var s2 = str1.substring(4,9); 
+				
+				//substr:从str1字符串索引为4的位置开始截取(包含),一共截取5个字符
+				var s3 = str1.substr(4,5);
+				
+				// toUpperCase : 将str2所有字母都转大写
+				var s4 = str2.toUpperCase();
+				//toLowerCase : 将str2所有字母都转小写
+				var s5 = str2.toLowerCase();
+				
+				//match : 判断str3字符串的格式是否匹配reg的规则，如果不匹配则返回值为null
+				var str3 = "1303030330";  //假设str3是用户在页面输入的手机号
+				var reg = "^1[3,5,7,8]\\d{9}$"; //手机号码的规则（正则表达式）
+				var b = str3.match(reg);
+				
+				console.log(b);
+			}
+		</script>
+		
+	</body>
+</html>

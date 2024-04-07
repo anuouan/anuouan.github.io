@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>HTML常用标签—显示标签</title>
+	</head>
+	<body>
+		<!--显示文本-->
+		<!-- font标签：color属性设置颜色，fase属性设置字体，size属性设置大小 -->
+		<font color="red" face="华文行楷" size="7">千锋教育</font>
+		<font color="blue" face="微软雅黑" size="4">Java涛哥</font>
+		
+		<!-- H5不推荐使用font标签，显示文本推荐使用label标签 -->
+		<!-- label标签没有字体属性，但是可以通过style属性值设置字体颜色、大小、样式 -->
+		<label style="color:green;font-size:100px;font-family:楷体">网页设计</label>
+		
+		
+		<!-- 显示图片 ---  img标签：
+		src属性用于指定显示的图片的路径，可以是网络图片路径，也可以本地图片路径
+		    (本地图片：先在项目中创建一个存放图片的目录imgs，再将要显示的图片拷贝进来 )
+		width、hegiht属性,设置图片的宽度、高度 ,如果两个属性同时设置可能会改变图片的比例
+		    可以只设置其中一个属性，另一个属性会等比缩放
+		alt属性，用于指定图片无法加载时的替换文本
+		-->
+		<img src="http://www.qfedu.com/images/new_logo.png"/>
+		<img src="imgs/logo.jpg" height="200" alt="千锋LOGO"/>
+		
+		
+		<!--audio标签 调用浏览器内置的音频播放器（默认是隐藏的）
+			src属性指定音频的路径（网络路径、本地路径）
+			controls属性表示显示播放器（此属性不需要属性值）
+			autoplay属性表示音乐自动播放（考虑浏览器兼容性）
+		-->
+		<audio src="meida/麻雀.mp3" controls autoplay></audio>
+		
+		<!--video标签 调用浏览器内置的视频播放器（默认是隐藏的）
+			src属性指定视频的路径（网络路径、本地路径）
+			controls属性表示显示播放器的控制条（此属性不需要属性值）
+			autoplay属性表示视频自动播放（考虑浏览器兼容性）
+			width、height属性设置视频播放器的尺寸
+		-->
+		<video src="meida/Java学科宣传片.mp4" controls autoplay width="400"></video>
+		
+	</body>
+</html>

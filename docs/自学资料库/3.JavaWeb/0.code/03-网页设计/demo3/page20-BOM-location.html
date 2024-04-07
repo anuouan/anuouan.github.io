@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<button onclick="testLocation()">测试Location</button>
+		
+		<script type="text/javascript">
+			function testLocation(){
+				//获取地址栏完整的网址  http://127.0.0.1:8848/demo3/page20-BOM-location.html?key=value
+				//                    协议   主机       端口   路径                         参数
+				var s1 = location.href;
+				//获取地址栏网址的协议
+				var s2 = location.protocol;
+				//获取地址栏网址的端口
+				var s3 = location.port;
+				// 获取地址栏网址的主机和端口
+				var s4 = location.host;
+				// 获取地址栏网址的主机
+				var s5 = location.hostname;
+				// 获取地址栏网址的资源路径
+				var s6 = location.pathname;
+				
+				//★ 修改地址栏完整的网址（可以实现网页跳转）
+				location.href = "http://www.qfedu.com/";
+				
+				
+				//location对象的函数
+				//reload ： 重新载入当前网页（刷新网页）
+				location.reload();
+				//replace：使用参数指定的网址替换当前地址栏的网址（实现网页跳转）
+				location.replace("http://www.qfedu.com/");
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="testFor()">测试FOR</button>
+		<button onclick="testForIn()">测试ForIn</button>
+		<button onclick="testWhile()">测试while</button>
+		<button onclick="testBreakAndContinue()">测试break和continue的区别</button>
+		
+		<script type="text/javascript">
+			function testFor(){
+				for(var i=0 ; i<10 ; i++){
+					console.log("★");
+				}
+			}
+			
+			//遍历JS对象和数组
+			function testForIn(){
+				var stu = {stuNum:"10001",stuName:"张三",stuGender:"男"};
+				//1.遍历对象的属性名
+				for(v in stu){
+					//根据对象属性名，从对象中获取属性值
+					console.log(v+"："+stu[v]);
+				}
+				
+				//2. 遍历数组的索引
+				var arr = ["aaa","bbb","ccc"];
+				for(i in arr){
+					//根据索引从数组中获取值
+					console.log(arr[i]);
+				}
+			}
+		
+			function testWhile(){
+				var i = 0;
+				while(i<10){
+					console.log(i+"★");
+					i++;
+				}
+				
+				//do while ： 无论条件是否成立，都先执行一次循环体代码
+				//        然后判断条件是否成立，如果成立则继续执行下一次
+				var j = 10;
+				do{
+					console.log("☆");
+					j++;
+				}while(j<10); 
+			}
+		
+			function testBreakAndContinue(){
+				// break终止循环：跳出循环
+				for (var i = 1; i <= 10; i++) {
+					if(i == 5){
+						break;
+					}
+					console.log("~~~~"+i);
+				}
+				
+				// continue中止循环：停止本次循环体的执行，进入到下一次循环
+				for (var i = 1; i <= 10; i++) {
+					if(i == 5){
+						continue;
+					}
+					console.log("----"+i);
+				}
+				
+			}
+		
+		</script>
+	</body>
+</html>

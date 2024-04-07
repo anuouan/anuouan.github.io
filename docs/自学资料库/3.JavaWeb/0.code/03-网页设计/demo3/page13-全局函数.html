@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<button onclick="testFunctions()">测试全局函数</button>
+		
+		<a href="https://www.baidu.com">百度</a>
+		
+		<script type="text/javascript">
+			function testFunctions(){
+				
+				//全局函数：通过全局对象Functions调用全局函数，Functions没有名称，因此全局函数可以直接调用
+				//parseInt：将字符串转换成整数数值
+				var s1 = "123";
+				var m = parseInt(s1);
+				//parseFloat：将字符串转换成小数数值
+				var s2 = "3.14";
+				var n = parseFloat(s2);
+				
+				var url = "http://www.qfedu.com/?param=中华有我";
+				//encodeURI ： 对网址的参数部分进行编码（特殊符号和中文）
+				var newUrl = encodeURI(url);
+				//decodeURI：对编码后的网址进行解码
+				var url2 = decodeURI(newUrl);
+				
+				//escape：对字符串中的特殊和中文进行编码
+				var str1 = "My name is 韩梅梅";
+				var s = escape(str1);
+				//unescape：对编码后的字符串进行解码
+				var str2 = unescape(s);
+				
+				//当一个字符串满足JS中对象的格式（JSON格式），我们可以通过eval转换成对象格式
+				var jsonStr = "{stuNum:'1001',stuName:'张三'}";
+				//eval:将满足JSON格式的字符串转换成JS对象
+				var stu = window.eval("("+jsonStr+")");
+				
+				console.log(stu.stuName);
+			}
+		</script>
+	</body>
+</html>

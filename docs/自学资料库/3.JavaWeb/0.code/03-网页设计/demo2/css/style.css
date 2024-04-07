@@ -1,0 +1,8 @@
+/* 样式定义在CSS文件中，无需使用style标签 */
+.btnStyle{
+	width: 200px; 
+	height: 35px;
+	border: none;
+	background-color: pink;
+	border-radius: 5px;
+}

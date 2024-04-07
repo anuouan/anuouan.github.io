@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#container{
+				border: #F08080 2px solid;
+				width: 400px;
+				height: 300px;
+			}
+		</style>
+	</head>
+	<body >
+		<div id="container">
+			<p>hello</p>
+			<p id="p">我是一个图片</p>
+			<p>world</p>
+		</div>
+		<img id="img3" src="imgs/img03.png" height="100" />
+		
+		<input id="btn_test" type="button" value="测试" onclick="test()"/>
+		<script type="text/javascript">
+			function test(){
+				//使用一个图片标签，替换div中的p标签
+				//0. 创建新节点
+				//var imgTag = document.createElement("img");
+				//imgTag.src = "imgs/img01.png";
+				//imgTag.height=100;
+				
+				// 获取网页中已经存在的图片标签:
+				// 如果使用网页中已经存在的标签A  去替换标签B  ，A会发生移动（并不是拷贝A去替换B）
+				var imgTag = document.getElementById("img3");
+				
+				// 1.替换子节点
+				// parentTag.replaceChild(newChild,oldChild) ：使用newChild替换parentTag中的oldChild
+				var parentTag = document.getElementById("container");
+				var oldChild = document.getElementById("p");
+				parentTag.replaceChild(imgTag,oldChild);
+				
+				// 2.替换节点
+				// currentTag.replace( newTag):使用newTag来替换currentTag  (受浏览器支持的限制)
+				// oldChild.replaceNode(imgTag);
+			}
+		</script>
+		
+	</body>
+</html>

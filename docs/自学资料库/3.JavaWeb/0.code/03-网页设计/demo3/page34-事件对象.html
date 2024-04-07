@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<button onmouseover="test1()">按钮</button>
+		<img src="imgs/img01.png" height="100"  id="img"/>
+		
+		<script type="text/javascript">
+			function test1(){
+				//window.event 获取当前事件对象
+				var ev = window.event;
+				
+				//event对象调用srcElement属性，可以获取触发此事件的标签
+				var tag = ev.srcElement; 
+				console.log(tag);
+				
+				//event对象调用type属性，可以获取事件的类型
+				var type = ev.type;
+				console.log(type);
+			}
+			
+			var img = document.getElementById("img");
+			img.onclick = function(ev){
+				console.log(ev);
+			}
+			
+		</script>
+		
+	</body>
+</html>

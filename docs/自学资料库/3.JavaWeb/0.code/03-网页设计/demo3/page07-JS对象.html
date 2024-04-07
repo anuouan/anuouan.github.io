@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS对象</title>
+	</head>
+	<body>
+		<button onclick="testObj1()">使用{}创建JS对象</button>
+		<button onclick="testObj2()">使用构造函数创建JS对象</button>
+		<script type="text/javascript">
+			function testObj1(){
+				//创建对象:通过{}创建对象
+				//1.定义对象属性：可以直接在{}中指定对象的属性
+				//2.定义对象方法:也可以直接在{}中定义当前对象的方法
+				var obj = {
+					id:"101",
+					name:"zhangsan",
+					test1:function(){
+						console.log("----test1");
+					}
+				};
+				
+				//扩展属性：对象本身没有这个属性，但是我们可以通过【对象.新属性】方式给这个对象新增属性
+				obj.age = 21;
+				
+				//通过【对象.属性名】可以调用对象属性
+				console.log(obj);
+			}
+		
+			//1.自定义JS构造函数
+			function Student(num,name){
+				//1-1.定义属性
+				this.stuNum = num;
+				this.stuName = name;
+				//1-2.定义方法
+				this.method1 = function(a){
+					console.log("Student---method1:"+a);
+				}
+				this.method2 = myMethod2;
+			}
+			function myMethod2(){
+				console.log("Student---method2");
+			}
+			
+		
+			function testObj2(){
+				//2.使用构造函数创建JS对象:通过构造函数创建的对象可以调用构造器中的属性和方法
+				
+				//【构造器扩展属性】
+				Student.prototype.stuGender = "男";
+				
+				var s1 = new Student("1001","张三");
+				console.log(s1);
+				console.log(s1.stuGender);
+				
+				var s2 = new Student("1002","李四");
+				console.log(s2);
+				console.log(s2.stuGender);
+			}
+		</script>
+	</body>
+</html>

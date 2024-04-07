@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<button onclick="test1()">打开循环任务</button>
+		<button onclick="test2()">关闭循环任务</button>
+		
+		<script type="text/javascript">
+			var task2;
+		
+			function test1(){
+				console.log("~~~~~~~~test1");
+				//setInterval，启动循环任务
+				//  参数1：调用的方法，  参数2：间隔的时间（单位：ms）
+				task2 = setInterval( "showDate()",1000);
+			}
+			
+			function showDate(){
+				var date = new Date();
+				date.setFullYear(2029);
+				date.setMonth(11);
+				date.setDate(28);
+				date.setHours(14);
+				
+				var year = date.getYear()+1900;  //获取年份，相对于1900年的偏移年份
+				var month = date.getMonth()+1;	//获取月份0-11
+				var d = date.getDate();			//获取日期
+				var hour = date.getHours();		//获取小时
+				var min = date.getMinutes();	//获取分钟
+				var sec = date.getSeconds();	//获取秒
+				
+				var str = year+"-"+month+"-"+d+" "+hour+":"+min+":"+sec;
+				console.log(str);
+			}
+		
+			function test2(){
+				console.log("~~~~~~~~test2");
+				//clearInterval：关闭正在进行的循环任务
+				clearInterval(task2);
+			}
+		</script>
+	</body>
+</html>

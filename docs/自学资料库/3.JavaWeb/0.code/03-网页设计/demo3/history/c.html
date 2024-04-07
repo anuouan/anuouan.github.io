@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>C</title>
+	</head>
+	<body>
+		C页面
+		<hr/>
+		<a href="d.html">跳转到D页面</a>
+		<hr/>
+		<button onclick="test1()">🔙</button>
+		<button onclick="test2()">➡</button>
+		<button onclick="test3()">历史记录的数量</button>
+		
+		<script type="text/javascript">
+			function test1(){
+				//back ： 返回上一个页面
+				//history.back();
+				history.go(-1);
+			}
+			function test2(){
+				//forward：切换到下一个页面
+				//history.forward();
+				history.go(1);
+			}
+			function test3(){
+				//length属性，获取历史记录中网址的个数
+				var len = history.length;
+				console.log(len);
+			}
+		</script>
+	</body>
+</html>

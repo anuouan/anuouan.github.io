@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="testRegExp()">测试RegExp</button>
+		<script type="text/javascript">
+			function testRegExp(){
+				//String对象的match函数进行正则校验
+				var str1 = "1303030330";
+				var reg1 = "^1[3,5,7,8]\\d{9}$";
+				//match函数：如果校验匹配返回字符串，不匹配返回null
+				var r = str1.match(reg1);
+				console.log(r);
+				
+				//------------------------------------------------------------------
+				//RegExp对象的test函数进行正则校验
+				var str = "15030303300";
+				// 一个RegExp对象就是一个正则规则
+				var reg = new RegExp("^1[3578][0-9]{9}$");
+				//test 函数：如果匹配返回true，不匹配返回false
+				var b = reg.test(str);
+				console.log(b);
+			}
+		</script>
+	</body>
+</html>

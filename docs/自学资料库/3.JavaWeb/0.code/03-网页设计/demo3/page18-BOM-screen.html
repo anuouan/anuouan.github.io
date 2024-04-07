@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="testnavigator()">测试navigator</button>
+		
+		<script type="text/javascript">
+			function testnavigator(){
+				
+				//返回浏览器的名称（在老版本的IE中可以测试）
+				var name = navigator.appName;
+				
+				//返回浏览器的代码名
+				var code = navigator.appCodeName;
+				
+				//返回浏览的平台及版本信息
+				var version = navigator.appVersion;
+				
+				//返回浏览器的语言环境（并不是所有浏览器都支持）
+				var lang = navigator.browserLanguage;
+				
+				//检查当前浏览器是否启用cookie
+				var b = navigator.cookieEnabled;
+				
+				console.log(b);
+			}
+		</script>
+	</body>
+</html>

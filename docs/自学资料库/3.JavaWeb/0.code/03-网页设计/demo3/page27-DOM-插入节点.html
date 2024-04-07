@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body >
+		
+		<input id="btn_test" type="button" value="测试" onclick="test()"/>
+		<script type="text/javascript">
+			function test(){
+				//1.创建标签节点
+				var imgTag = document.createElement("img");  //<img>
+				
+				//-----------------------begin
+				//2.创建属性节点
+				//var srcAttr = document.createAttribute("src");  //  src=""
+				//srcAttr.nodeValue = "imgs/img01.png";			//  src="imgs/img01.png"
+				
+				//3.将属性节点添加到标签节点中  
+				//imgTag.setAttributeNode(srcAttr);				// <img src="imgs/img01.png">
+				//-----------------------end
+				
+				//4.给标签节点添加/修改属性
+				imgTag.setAttribute("src","imgs/img02.png");
+				imgTag.setAttribute("width","200");
+				imgTag.alt = "图片无法显示";
+				
+				//5.从标签节点上移出一个属性
+				imgTag.removeAttribute("alt");
+				
+				//6.appendChild :  拼接子节点   tagNode.appendChild(cNode);  将cNode这个标签节点拼接到 body标签里面（最后面）
+				var body = document.body;
+				//body.appendChild(imgTag);
+				
+				//7.insertBefore: 插入子节点   parentTag.insertBefore(imgTag,btnTag); 将imgTag插入到parentTag里面btnTag之前
+				var btnTag = document.getElementById("btn_test");
+				body.insertBefore(imgTag,btnTag);
+			}
+		</script>
+		
+	</body>
+	
+</html>

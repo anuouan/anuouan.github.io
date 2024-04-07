@@ -16,7 +16,6 @@ nav:
       - 关于我: 关于我/index.md
   - 博客分类:
       - 博客分类/index.md
-      - JavaWeb: 博客分类/javaweb/index.md
       - Maven:
           - 博客分类/maven/index.md
           - 1.maven自学笔记: 博客分类/maven/1.maven自学教程.md
@@ -37,10 +36,6 @@ nav:
           - 博客分类/linux/index.md
           - 1.Linux vi/vim: 博客分类/linux/1.VIM.md
           - 2.Linux命令查询: 博客分类/linux/2.Linux命令查询.md
-          - 3.linux入门篇: 博客分类/linux/3.linux入门篇.md
-      - Redis:
-          - 博客分类/redis/index.md
-          - 1.Redis笔记: 博客分类/redis/1.Redis笔记.md
       - 设计模式:
           - 博客分类/设计模式/index.md
           - 1.UML类图: 博客分类/设计模式/1.UML类图.md

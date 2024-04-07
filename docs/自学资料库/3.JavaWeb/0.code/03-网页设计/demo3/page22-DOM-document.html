@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>document对象</title>
+	</head>
+	<body>
+		<img class="cc" name="m1" src="imgs/img01.png" height="100"/><br/>
+		<img id="img2" src="imgs/img02.png" height="100"/><br/>
+		<img name="m1" src="imgs/img03.png" height="100"/><br/>
+		<p>p1</p>
+		<p class="cc">p2</p>
+		<p>p3</p>
+		
+		<button onclick="testDocument()">测试document对象</button>
+		<button onclick="test1()">测试getElementById函数</button>
+		
+		<script type="text/javascript">
+			function testDocument(){
+				//write : 通过网页输出流将数据输出并显示到网页中
+				//        如果执行多次write函数使用的是同一个流，则输出的数据会追加
+				//        如果多次write使用的是不同的流，后面write的内容会覆盖之前的内容
+				document.write("从前有座山<br/>");
+				document.writeln();
+				document.write("山里有座庙");
+				
+				//close: 关闭当前网页输出流，关闭之后如果执行write，则会打开新的流
+				//document.close();
+				
+				//open ：打开并使用一个新的流
+				//document.open();
+				document.write("庙里有...");
+			}
+		
+			function test1(){
+				//getElementById：根据标签的id属性获取一个元素
+				var e = document.getElementById("img2");
+				
+				//getElementsByName：根据标签的name属性获取一组元素
+				var es = document.getElementsByName("m1");
+				
+				//getElementsByClassName：根据标签的class属性获取一组元素
+				var es2 = document.getElementsByClassName("cc");
+				
+				//getElementsByTagName：根据标签名获取一组元素
+				var es3 = document.getElementsByTagName("p");
+				console.log(es3);
+				
+				
+			}
+		</script>
+	</body>
+</html>
