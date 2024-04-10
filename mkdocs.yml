@@ -73,6 +73,9 @@ nav:
       - Linux错误日志:
           - 错误日志/Linux错误日志/index.md
           - 1.在虚拟机安装Ubuntu时出现窗口不全: 错误日志/Linux错误日志/1.在虚拟机安装Ubuntu时出现窗口不全.md
+      - SSM框架错误日志:
+          - 错误日志/SSM框架错误日志/index.md
+          - 1.mybatis事务的使用: 错误日志/SSM框架错误日志/1.mybatis事务的使用.md
   - 网站部署:
       - 网站部署/index.md
       - 1.个人网站搭建: 网站部署/1.网站部署.md
