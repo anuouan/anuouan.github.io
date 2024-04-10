@@ -12,7 +12,7 @@ nav:
       - 博客分类: 博客分类/index.md
       - 报错日志: 错误日志/index.md
       - 网站部署: 网站部署/index.md
-      - 生活分享: life-sharing/index.md
+      - 生活分享: 生活分享/index.md
       - 关于我: 关于我/index.md
   - 博客分类:
       - 博客分类/index.md
@@ -36,6 +36,7 @@ nav:
           - 博客分类/linux/index.md
           - 1.Linux vi/vim: 博客分类/linux/1.VIM.md
           - 2.Linux命令查询: 博客分类/linux/2.Linux命令查询.md
+          - 3.linux安装mysql8: 博客分类/linux/3.linux安装mysql8.md
       - 设计模式:
           - 博客分类/设计模式/index.md
           - 1.UML类图: 博客分类/设计模式/1.UML类图.md
