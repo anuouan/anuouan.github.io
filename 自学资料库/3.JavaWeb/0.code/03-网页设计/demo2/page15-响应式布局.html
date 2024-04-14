@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{padding: 0px;margin: 0px;}
+			
+			.row{
+				width: 1200px;
+				height: 300px;
+				background: lightcyan;
+				border: 1px solid #008B8B;
+				margin: 20px auto;
+				
+				display: flex; /* 将父容器的div设置为弹性盒,此容器相当于一个行，容器中的每个标签相当于行中的列 */
+				flex-direction: row; /* 设置弹性盒主轴方向row（左-右）   row-reverse(右-左)  column(上-下) column-reverse(下-上) */
+			}
+		
+			.row div{
+				height: 280px;
+				background: whitesmoke;
+				margin: 5px;
+				box-shadow: gray 2px 2px 3px; 
+			}
+			img{
+				width: 100%;
+				border-radius: 5px;
+			}
+			
+			/* flex样式属性，用于设置 弹性盒 中的标签所占的位置的比例*/
+			#d1{flex: 1;}
+			#d2{flex: 2;}
+			#d3{flex: 2;}
+			#d4{flex: 2;}
+			#d5{flex: 2;}
+			#d6{flex: 1;}
+		</style>
+		
+	</head>
+	<body>
+		<div class="row">
+			<div id="d1"><img src="imgs/img01.png"/><br/>图片1</div>
+			<div id="d2"><img src="imgs/img02.png"/><br/>图片2</div>
+			<div id="d3"><img src="imgs/img03.png"/><br/>图片3</div>
+			<div id="d4"><img src="imgs/img01.png"/><br/>图片1</div>
+			<div id="d5"><img src="imgs/img02.png"/><br/>图片2</div>
+			<div id="d6"><img src="imgs/img03.png"/><br/>图片3</div>
+		</div>
+	</body>
+</html>

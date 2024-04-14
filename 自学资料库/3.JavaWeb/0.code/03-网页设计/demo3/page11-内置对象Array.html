@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="testArray()">测试Array</button>
+		<script type="text/javascript">
+		function testArray(){
+			//1.创建数组
+			// a.通过构造器创建数组
+			var arr1 = new Array();
+			var arr2 = new Array("aaa","bbb","ccc");
+			// b.静态初始化数组
+			var arr3 = ["a","b","c","d",1,2,3];
+			
+			//2.数组的操作
+			// a.添加元素(索引可以不连续，数组长度=最大索引+1)
+			arr1[0] = "wanglaoji";
+			arr1[1] = "jiaduobao";
+			arr1[5] = "kangshifu";
+			// b.通过索引获取数组中的元素
+			var v1 = arr1[0];
+			var v2 = arr1[1];
+			var v3 = arr1[9]; //数组索引越界（返回undefined）
+			// c.遍历
+			//   ①for循环遍历
+			for (var i = 0; i <arr1.length; i++) {
+				var v = arr1[i];
+				console.log(i+":"+v);
+			}
+			//   ②for ... in  遍历获取的数组元素的索引
+			for(var i in arr2){
+				var v = arr2[i];
+				console.log(i+":"+v)
+			}
+			
+			//3.Array中定义的函数
+			// join :将数组中所有的元素使用"-"拼接成一个字符串
+			var s1 = arr3.join("-");
+			//slice : 从当前数组中截取元素，生成一个新数组
+			var arr = arr3.slice(2,4);
+			// reverse: 将当前数组中的元素反转
+			arr3.reverse();
+			
+			console.log(arr3);
+		}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<button onclick="testWindow()">测试window</button>
+		
+		<script type="text/javascript">
+			function testWindow(){
+				
+				//获取BOM对象属性
+				var v = window.navigator;
+				var s = window.screen;
+				var l = window.location;
+				var h = window.history;
+				var d = window.document;
+				
+				//获取/设置当前浏览器窗口的名字
+				window.name = "w1";
+				var name = window.name;
+				
+				//获取/设置当前浏览器窗口的状态栏
+				window.status = "☆";
+				
+				//获取当前窗口是否关闭
+				var s = window.closed;
+				
+				//innerWidth: 获取浏览器的内部宽度
+				//innerHeight：获取浏览器的内部高度
+				var w = window.innerWidth;
+				var h = window.innerHeight;
+				
+				//outerWidth: 获取浏览器的外部宽度
+				//outerHeight：获取浏览器的外部高度
+				var ow = window.outerWidth;
+				var oh = window.outerHeight;
+				
+				console.log(ow+"*"+oh);
+				
+			
+				//self 就是当前窗口本身，等价于windows对象
+				var w = window.self;
+				//parent : 如果当前网页是现在另一个网页的iframe中，parent属性就表示获取当前窗口的上一级窗口 
+				var p = window.parent;
+				//top ： 获取当前窗口的顶层窗口
+				var t = window.top;
+				
+				
+				// 弹窗函数
+				// alert ： 警告提示框,当用户在网页中进行错误操作时用于提示
+				//window.alert("请注意，倒车！");
+				
+				//confirm：消息确认框，当用户进行不可逆、且影响数据的操作，进行用户确认
+				//   此弹窗有返回值，当用户点击“确定”时，返回true
+				//var v = window.confirm("请问你确定删除这个信息吗？");
+				
+				//prompt：用户交互输入框，参数1(弹框问题提示信息)，参数2(输入框默认值)
+				//   此弹窗有返回值，如果点击确定返回值为输入框中的值，点击取消返回值为null
+				//var v= window.prompt("请输入你的出生年份:","2021");
+				
+				//close：关闭当前窗口对象（IE有确认提示，谷歌就直接关了）
+				//window.close();
+				
+				//open(URL,name,features,replace) ： 打开一个新窗口
+				// 参数1：新打开的窗口显示的网址
+				// 参数2：新打开窗口的名字
+				// 参数3：新打开的窗口的属性
+				// 参数4：是否替换当前窗口  默认值为false，设置为true表示打开的新窗口会替代当前窗口
+				// 返回值：打开的窗口对象
+				var URL = "https://www.baidu.com";
+				var features = "";
+				// var w = window.open(URL); 
+				//var w = window.open(URL,"百度");
+				// var w = window.open(URL,"百度",features);
+				var w = window.open(URL,name,true);
+				
+			}
+		
+		</script>
+		
+	</body>
+</html>

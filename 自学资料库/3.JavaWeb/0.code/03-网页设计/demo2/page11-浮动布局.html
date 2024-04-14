@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#container{
+				width: 1200px;
+				height: 800px;
+				border: 1px solid orange;
+				margin: 0px auto;
+			}
+			
+			/* CSS复合选择器：id=container里面的div标签 */
+			#container div{}
+			
+			#div1{
+				width: 1200px;
+				height:100px;
+				background: red;
+				float: left; /* 浮动 */
+			}
+			#div2{
+				width: 200px;
+				height: 650px;
+				background: green;
+				float: left;
+			}
+			#div3{
+				width: 1000px;
+				height: 650px;
+				float: left;
+			}
+			#div4{
+				width: 1200px;
+				height: 50px;
+				background: purple;
+				float: left;
+			}
+			
+			#div5{
+				width: 1200px;
+				height: 100px;
+				background: lightgray;
+				clear: both;
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<div id="container">
+			<div id="div1">div1</div>
+			<div id="div2">
+				<a href="page01.html" target="mainFrame">Page01</a>
+			</div>
+			<div id="div3">
+				<iframe name="mainFrame" width="1000" height="650" frameborder="0"></iframe>
+			</div>
+			<div id="div4">div4</div>
+		</div>
+		
+	</body>
+</html>

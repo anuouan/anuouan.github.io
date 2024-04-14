@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="测试创建新节点" onclick="test()"/>
+	</body>
+	<script type="text/javascript">
+		function test(){
+			//创建标签节点（元素）
+			var tagNode = document.createElement("img");
+			console.log(tagNode.nodeType);
+			console.log(tagNode.nodeName);
+			console.log(tagNode.nodeValue);
+			
+			//创建文本节点
+			var textNode = document.createTextNode("hello world");
+			console.log(textNode.nodeType);
+			console.log(textNode.nodeName);
+			console.log(textNode.nodeValue);
+			
+			//创建属性节点
+			var attrNode = document.createAttribute("name");
+			console.log(attrNode.nodeType);
+			console.log(attrNode.nodeName);
+			console.log(attrNode.nodeValue);
+			
+		}
+	</script>
+</html>

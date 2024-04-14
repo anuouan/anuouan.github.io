@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+	</head>
+	<body>
+		<input type="text" id="userName"/>
+		
+		<button id="btn">测试按钮</button>
+		<button id="btn2">关闭事件</button>
+		<button id="btn3">打开事件</button>
+		
+		<select id="city">
+			<option value="北京">北京</option>
+			<option value="上海">上海</option>
+			<option value="武汉">武汉</option>
+		</select>
+		
+		<script type="text/javascript">
+			//1.ready()
+			$(document).ready(function(){
+				//alert(1);
+			});
+			
+			//2. blur()  元素失去焦点时触发
+			$("#userName").blur(function(){
+				console.log("---输入框失去焦点");
+			});
+			
+			//3. focus()  元素获得焦点时触发
+			$("#userName").focus(function(){
+				console.log("---输入框获得焦点");
+			});
+			
+			$("#btn").click(function(){
+				alert(666);
+			});
+			
+			//输入框 和 下拉菜单 等内容可被改变的元素
+			$("#city").change(function(ev){
+				console.log(ev);
+			});
+			
+			$("#btn2").click(function(){
+				$("#city").off("change");
+			});
+		
+			$("#btn3").click(function(){
+				$("#city").on("change",function(){
+					console.log("重新被打开的change事件");
+				});
+			});
+		</script>
+		
+	</body>
+</html>

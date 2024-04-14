@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.imgStyle{
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+				transform: rotate(45deg);
+			}
+		</style>
+	</head>
+	<body>
+		
+		<img src="imgs/img01.png" height="200"/><br/>
+		<img id="img2" src="imgs/img02.png" height="200"/><br/>
+		<img id="img3" src="imgs/img03.png" height="200"/><br/>
+		
+		<button onclick="testAttrOper()">操作标签属性</button>
+		<button onclick="testStyleOper()">操作标签样式</button>
+		<button onclick="testClassOper()">操作标签class属性</button>
+		
+		<script type="text/javascript">
+			function testAttrOper(){
+				var img = document.getElementById("img2");
+				//操作标签属性（标签对象.标签属性名）
+				// a.获取属性值
+				var s = img.src;
+				// b.设置属性值
+				img.src = "imgs/img03.png";
+			}
+		
+			function testStyleOper(){
+				var img = document.getElementById("img2");
+				//操作标签样式 (标签对象.style.样式属性名)
+				//样式属性名在css中是以"-"分割多个单词，在JS中操作要使用驼峰命名
+				// a.设置标签的样式属性
+				img.style.border = "2px rgba(255,0,0,0.5) solid";
+				img.style.borderRadius="10px";
+				// b.获取标签的样式属性
+				var m = img.style.border;
+				console.log(m);
+			}
+		
+			function testClassOper(){
+				var img3 = document.getElementById("img3");
+				//标签对象的 class属性 使用className进行操作
+				img3.className = "imgStyle";
+			}
+		</script>
+		
+	</body>
+</html>

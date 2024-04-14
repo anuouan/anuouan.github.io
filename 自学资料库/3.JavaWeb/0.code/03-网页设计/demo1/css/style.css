@@ -1,0 +1,51 @@
+/* 消除边距 */
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+/* 标题样式 */
+.titleTextStyle{
+	/* 字体 */
+	font-family: 黑体;
+	font-size: 18px;
+	font-weight: bold;
+	transform: translateY(-20px);
+	display: inline;
+}
+#logo{
+	transform: translateY(10px);
+}
+
+/* 帐号密码输入框 */
+.inputStyle{
+	width: 320px;
+	height: 30px;
+	background: #eeeeee;
+	border-radius: 4px;
+	border:none;
+	padding: 10px 20px;
+}
+
+/* 超链接样式 */
+a{
+	text-decoration: none;
+}
+
+/* 登录按钮样式 */
+.btnStyle{
+	width: 360px;
+	height: 50px;
+	border-radius: 5px;
+	border:none;
+	background: lightcoral;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+/* 设置登录按钮下三个超链接样式 */
+.linkStyle{
+	margin-left: 30px;
+	padding: 15px;
+}

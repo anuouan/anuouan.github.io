@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<img src="imgs/img01.png" height="200" />
+			<img src="imgs/img02.png" height="200" />
+			<img src="imgs/img03.png" height="200" />
+			<div id="div1" style="width: 200px; height: 200px;background: red;"></div>		
+			
+			<hr>
+			<button id="btn1">测试hide()</button>
+			<button id="btn2">测试show()</button>
+			<button id="btn3">测试toggle()</button>
+			
+			<hr>
+			<button id="btn4">测试slideUp()</button>
+			<button id="btn5">测试slideDown()</button>
+			<button id="btn6">测试slideToggle()</button>
+			
+			<hr>
+			<button id="btn7">测试fadeOut()</button>
+			<button id="btn8">测试fadeIn()</button>
+			<button id="btn9">测试fadeToggle()</button>
+			<button id="btn10">测试fadeTo()</button>
+		</div>
+		
+		<img src="imgs/img01.png" id="img4"
+		style="width: 200px; height: 200px; border-radius: 50%" />
+		<button id="btn11">测试动画</button>
+		<button id="btn12">停止动画</button>
+		
+		
+		<script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+		<script type="text/javascript">
+			// hide() 隐藏
+			$("#btn1").click(function(){
+				$("img").hide();
+			});
+			// show() 显示
+			$("#btn2").click(function(){
+				$("img").show();
+			});
+			// toggle() 如果原来显示就执行隐藏，如果原来隐藏就执行显示
+			$("#btn3").click(function(){
+				$("img").toggle();
+			});
+		
+			// slideUp() 缩起来
+			$("#btn4").click(function(){
+				$("img").slideUp(3000);
+			});
+			// slideDown()  展开
+			$("#btn5").click(function(){
+				$("img").slideDown(3000);
+			});
+			// slideToggle()  如果原来显示就执行隐藏，如果原来隐藏就执行显示
+			$("#btn6").click(function(){
+				$("img").slideToggle();
+			});
+		
+			//fadeOut 淡出
+			$("#btn7").click(function(){
+				$("img").fadeOut();
+			});
+			//fadeIn 淡入
+			$("#btn8").click(function(){
+				$("img").fadeIn();
+			});
+			//fadeToggle 
+			$("#btn9").click(function(){
+				$("img").fadeToggle();
+			});
+			//fadeTo 将元素的透明度改变到指定的值
+			//  参数1：速度
+			//  参数2：透明度
+			$("#btn10").click(function(){
+				$("img").fadeTo(3000,0.5);
+			});	
+		
+		</script>
+		<script type="text/javascript">
+			//params:一组包含作为动画属性和终值的样式属性和及其值的集合
+			//speed:三种预定速度之一的字符串("slow","normal", or "fast")或表示动画时长的毫秒数值(如：1000)
+			//easing:要使用的擦除效果的名称(需要插件支持).默认jQuery提供"linear" 和 "swing".
+			//fn:在动画完成时执行的函数，每个元素执行一次。
+			$("#btn11").click(function(){
+				$("#img4").animate({width:"300px",height:"300px"},5000);
+				$("#img4").animate({width:"100px",height:"100px"},5000);
+			});
+			$("#btn12").click(function(){
+				//在动画完成之前执行stop,，就让动画停止下来，保持当前状态
+				$("#img4").stop();
+			});
+		
+		</script>
+	</body>
+</html>

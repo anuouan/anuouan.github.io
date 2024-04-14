@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body style="color: #F08080;" bgcolor="azure">
+		
+		<div id="div1">hello<h3>枫桥夜泊</h3>
+			<p>月落乌啼霜满天，</p>
+			<p>江枫渔火对愁眠；</p>
+			<p>姑苏城外寒山寺，</p>
+			<p>夜半钟声到客船。</p>
+		</div>
+		
+		<input type="button" value="测试" onclick="test()"/>
+		
+	</body>
+	<script type="text/javascript">
+		function test(){
+			
+			var body = document.body;
+			console.log(body);
+			
+			//attributes：所有的标签对象都可以调用attributes属性，获取当前标签的属性列表
+			var attrsArr = body.attributes;  //此数组中存放的就是style 和 bgcolor两个属性
+			//属性节点：
+			var attrNode = attrsArr[0];
+			console.log(attrNode.nodeType);
+			console.log(attrNode.nodeName);
+			console.log(attrNode.nodeValue);
+			
+			//childNodes ： 所有的标签对象都可以通过childNodes属性获取当前标签的子节点(包括标签节点、文本节点)
+			var div = document.getElementById("div1");
+			var nodesArr = div.childNodes;
+			
+			//文本节点
+			var textNode = nodesArr[0];
+			console.log(textNode.nodeType);
+			console.log(textNode.nodeName);
+			console.log(textNode.nodeValue);
+			
+			//标签节点
+			var tagNode = nodesArr[1];
+			console.log(tagNode.nodeType);
+			console.log(tagNode.nodeName);
+			console.log(tagNode.nodeValue);
+			
+		}
+	</script>
+</html>

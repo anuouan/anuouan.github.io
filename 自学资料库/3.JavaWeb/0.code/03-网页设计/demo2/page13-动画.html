@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#img1{
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+				transform: rotate(0deg);
+				/* transition 样式过渡： 
+					参数1：过渡的样式名（样式属性名）
+					参数2：过渡时间
+					参数3：过渡效果  ease(慢-快-慢)  ease-in(慢-快) ease-out(快-慢) linear(匀速)
+					参数4：延迟时间
+				*/
+				transition: transform 5s linear -2s;
+			}
+			
+			#img1:hover{
+				transform: rotate(360deg);
+			}
+		
+			
+			/* 定义动画 */
+			@keyframes xuanZhuan{
+				/* 元素的原始状态  from   0% */
+				0%{
+					transform: rotate(0deg);
+				}
+				50%{
+					transform: rotate(180deg);
+				}
+				 /* 元素的目标状态  to   100%*/
+				25%,100%{
+					transform: rotate(360deg);
+				} 
+			}
+			
+			#img2{
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+				/* animation 应用动画:
+					参数1：动画名称
+					参数2：完成动画的时间
+					参数3：动画的过渡效果
+					参数4：动画的循环次数（整数,infinite表示无限循环）
+				 */
+				animation: xuanZhuan 10s linear  infinite;
+			}
+		
+		</style>
+	</head>
+	<body>
+		
+		<img id="img1" src="imgs/img01.png" />
+		
+		<img id="img2" src="imgs/img02.png"/>
+		
+	</body>
+</html>

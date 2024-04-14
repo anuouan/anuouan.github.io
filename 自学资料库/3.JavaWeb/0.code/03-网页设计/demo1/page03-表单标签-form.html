@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单标签-form</title>
+	</head>
+	<body>
+		
+		<!-- form标签：用于提交数据的表单 
+			作用：当点击form标签中的提交按钮时，可以将form标签中输入视图中的数据提交到action属性指定的url
+			注意：1.提交form表单的按钮必须是提交按钮（type=submit，type=image）
+				 2.form表单中的输入标签需要提供name属性，否则输入标签中的值不会被提交
+				 3.form标签的method属性，指定表单提交数据的方式（get显式提交  post隐藏提交；其他区别暂不关注）
+				   method属性默认值是get，也就是说如果不写method属性，则get方式提交
+		   重置按钮：
+				必须在form表单中使用，用于重置表单中输入框的值（让输入框的值回到默认状态 ≠ 清空）
+		   提交按钮：
+				必须用在form表单中，用于提交表单 （在HTML5规范中，提交按钮也可以写在form外面,但是要通过form属性指定表单id）
+		-->
+		<form id="form1">
+			<input type="text" placeholder="请输入帐号" name="userName" value="123"/><br/>
+			<input type="password" placeholder="请输入密码" name="userPwd"/><br/>
+			<input type="reset" /><br/>
+		</form>
+		<input type="submit" value="登录1" form="form1" formaction="https://www.baidu.com" formmethod="get"/><br/>
+		<input type="submit" value="登录2" form="form1" formaction="http://www.qfedu.com" formmethod="post"/><br/>
+		
+	</body>
+</html>

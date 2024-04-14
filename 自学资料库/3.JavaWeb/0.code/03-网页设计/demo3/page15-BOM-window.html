@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="testWindow()">测试window</button>
+		<div style="height: 1500px; width: 2500px; background: lemonchiffon;">
+			1<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			2<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			3<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			4<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			5<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		</div>
+		<script type="text/javascript">
+			function testWindow(){
+				//打开新窗口，返回值w就表示新打开的浏览器窗口，w本身就是一个window对象
+				//var w = window.open("http://www.qfedu.com","千锋官网","width=400,height=300");
+				
+				//1.修改窗口尺寸
+				// resizeTo：将w窗口尺寸修改为 *,*
+				//w.resizeTo(800,600);
+				// resizeBy：在窗口之前的尺寸宽度和高度各增加多少
+				//w.resizeBy(800,600)
+				
+				//2.改变窗口位置
+				//moveTo：将窗口移动到指定的位置
+				//	参数1:窗口与屏幕左边的距离
+				//  参数2:窗口与屏幕顶端的距离
+				//w.moveTo(200,100);
+				//moveBy：基于窗口当前的位置，横向偏移和纵向偏移
+				//w.moveBy(200,100);
+				
+				//3.滚动滚动条(针对当前窗口的滚动条操作)
+				//scrollTo：将当前窗口的横向和纵向滚动条滚动指定的偏移量(x,y)
+				window.scrollTo(100,300);
+				//scrollBy：将当前窗口的横向和纵向滚动条滚动指定相对偏移量
+				window.scrollBy(-100,-200);
+			}
+		</script>
+	</body>
+</html>
