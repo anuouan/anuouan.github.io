@@ -38,6 +38,7 @@ nav:
           - 2.Linux命令查询: 博客分类/linux/2.Linux命令查询.md
           - 3.linux安装mysql8: 博客分类/linux/3.linux安装mysql8.md
           - 4.linux安装redis: 博客分类/linux/4.linux安装redis.md
+          - 5.linux安装docker: 博客分类/linux/5.linux安装docker.md
       - 设计模式:
           - 博客分类/设计模式/index.md
           - 1.UML类图: 博客分类/设计模式/1.UML类图.md
